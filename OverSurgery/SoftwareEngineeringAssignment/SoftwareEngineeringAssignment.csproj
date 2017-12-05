@@ -231,6 +231,8 @@
     <EmbeddedResource Include="ViewStaff.resx">
       <DependentUpon>ViewStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="properties-mysql.dat" />
+    <None Include="properties.dat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -243,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MySql.Data.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
