@@ -50,7 +50,7 @@ namespace SoftwareEngineeringAssignment
         }
         public string sanitize(string str)
         {
-            const string removeChars = "&^$#@+-,:;<>’\'-_*";
+            const string removeChars = "&^$#@+<>’\'_*";
             // specify capacity of StringBuilder to avoid resizing
             StringBuilder sb = new StringBuilder(str.Length);
             foreach (char x in str.Where(c => !removeChars.Contains(c)))
