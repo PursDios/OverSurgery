@@ -58,7 +58,7 @@
             // 
             this.lblPatientNumber.AutoSize = true;
             this.lblPatientNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientNumber.Location = new System.Drawing.Point(196, 47);
+            this.lblPatientNumber.Location = new System.Drawing.Point(207, 47);
             this.lblPatientNumber.Name = "lblPatientNumber";
             this.lblPatientNumber.Size = new System.Drawing.Size(100, 16);
             this.lblPatientNumber.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(354, 236);
+            this.lblLastName.Location = new System.Drawing.Point(368, 236);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 24;
@@ -155,7 +155,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 173);
+            this.label3.Location = new System.Drawing.Point(94, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 30;
@@ -183,7 +183,7 @@
             // 
             this.lblFirstName2.AutoSize = true;
             this.lblFirstName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName2.Location = new System.Drawing.Point(37, 401);
+            this.lblFirstName2.Location = new System.Drawing.Point(60, 401);
             this.lblFirstName2.Name = "lblFirstName2";
             this.lblFirstName2.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName2.TabIndex = 32;
@@ -201,7 +201,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(51, 461);
+            this.lblAddress.Location = new System.Drawing.Point(60, 461);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(59, 16);
             this.lblAddress.TabIndex = 34;
@@ -219,7 +219,7 @@
             // 
             this.lblLastName2.AutoSize = true;
             this.lblLastName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName2.Location = new System.Drawing.Point(222, 401);
+            this.lblLastName2.Location = new System.Drawing.Point(247, 401);
             this.lblLastName2.Name = "lblLastName2";
             this.lblLastName2.Size = new System.Drawing.Size(73, 16);
             this.lblLastName2.TabIndex = 36;
@@ -237,7 +237,7 @@
             // 
             this.lblPostcode.AutoSize = true;
             this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPostcode.Location = new System.Drawing.Point(230, 461);
+            this.lblPostcode.Location = new System.Drawing.Point(247, 461);
             this.lblPostcode.Name = "lblPostcode";
             this.lblPostcode.Size = new System.Drawing.Size(66, 16);
             this.lblPostcode.TabIndex = 38;
@@ -255,7 +255,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(354, 173);
+            this.lblFirstName.Location = new System.Drawing.Point(368, 173);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName.TabIndex = 40;
