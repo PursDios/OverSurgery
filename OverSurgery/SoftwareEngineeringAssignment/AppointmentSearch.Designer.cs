@@ -226,6 +226,7 @@
             // cbAppointment
             // 
             this.cbAppointment.DropDownHeight = 200;
+            this.cbAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAppointment.FormattingEnabled = true;
             this.cbAppointment.IntegralHeight = false;
             this.cbAppointment.ItemHeight = 13;

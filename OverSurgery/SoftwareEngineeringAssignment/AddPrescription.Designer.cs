@@ -128,6 +128,7 @@
             // 
             this.cbToDate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbToDate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbToDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbToDate.FormattingEnabled = true;
             this.cbToDate.Items.AddRange(new object[] {
             "1 Week",
@@ -160,6 +161,7 @@
             // 
             // cbDrug
             // 
+            this.cbDrug.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDrug.FormattingEnabled = true;
             this.cbDrug.Location = new System.Drawing.Point(92, 253);
             this.cbDrug.Name = "cbDrug";
