@@ -27,8 +27,16 @@ namespace SoftwareEngineeringAssignment
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DateTime dt = clDoB.SelectionStart;
-            instance.ExecuteQuery("INSERT INTO patient VALUES(NULL, '" + instance.sanitize(txtLastName.Text) + "', '" + instance.sanitize(txtFirstName.Text) + "', '" + instance.sanitize(txtAddress.Text) + "', '" + instance.sanitize(txtPostcode.Text) + "', '" + instance.sanitize(txtCountry.Text) + "', '" + instance.sanitize(dt.ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + instance.sanitize(txtMedicalHistory.Text) + "', '" + instance.sanitize(txtEmail.Text) + "', '" + instance.sanitize(txtPhone.Text) + "' , '0');");
+            if (txtAddress.Text != "" && txtCountry.Text != "" && txtEmail.Text != "" && txtFirstName.Text != "" && txtLastName.Text != "" && txtPhone.Text != "" && txtPostcode.Text != "")
+            {
+                DateTime dt = clDoB.SelectionStart;
+                instance.ExecuteQuery("INSERT INTO patient VALUES(NULL, '" + instance.sanitize(txtLastName.Text) + "', '" + instance.sanitize(txtFirstName.Text) + "', '" + instance.sanitize(txtAddress.Text) + "', '" + instance.sanitize(txtPostcode.Text) + "', '" + instance.sanitize(txtCountry.Text) + "', '" + instance.sanitize(dt.ToString("yyyy-MM-dd HH:mm:ss")) + "', '" + instance.sanitize(txtMedicalHistory.Text) + "', '" + instance.sanitize(txtEmail.Text) + "', '" + instance.sanitize(txtPhone.Text) + "' , '0');");
+                MessageBox.Show("A new user has been created", "New User Created.");
+            }
+            else
+            {
+                MessageBox.Show("Please check that all the text-boxes have been filled.", "Please Check Input");
+            }
         }
     }
 }
