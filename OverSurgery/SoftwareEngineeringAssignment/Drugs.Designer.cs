@@ -69,6 +69,7 @@
             this.btnNewDrug.TabIndex = 1;
             this.btnNewDrug.Text = "New Drug";
             this.btnNewDrug.UseVisualStyleBackColor = true;
+            this.btnNewDrug.Click += new System.EventHandler(this.btnNewDrug_Click);
             // 
             // btnExit
             // 
@@ -88,6 +89,7 @@
             this.btnDeleteDrug.TabIndex = 3;
             this.btnDeleteDrug.Text = "Delete Drug";
             this.btnDeleteDrug.UseVisualStyleBackColor = true;
+            this.btnDeleteDrug.Click += new System.EventHandler(this.btnDeleteDrug_Click);
             // 
             // Drugs
             // 

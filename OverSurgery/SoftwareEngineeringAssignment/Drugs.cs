@@ -12,6 +12,7 @@ namespace SoftwareEngineeringAssignment
 {
     public partial class Drugs : Form
     {
+        Form f;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Medicine> medList;
         public Drugs()
@@ -39,6 +40,20 @@ namespace SoftwareEngineeringAssignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNewDrug_Click(object sender, EventArgs e)
+        {
+            f = new AddDrug();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDeleteDrug_Click(object sender, EventArgs e)
+        {
+            f = new DeleteDrug();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }
