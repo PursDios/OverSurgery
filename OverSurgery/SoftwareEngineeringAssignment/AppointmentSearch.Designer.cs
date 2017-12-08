@@ -53,7 +53,7 @@
             // btnSearch1
             // 
             this.btnSearch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch1.Location = new System.Drawing.Point(407, 120);
+            this.btnSearch1.Location = new System.Drawing.Point(406, 199);
             this.btnSearch1.Name = "btnSearch1";
             this.btnSearch1.Size = new System.Drawing.Size(85, 29);
             this.btnSearch1.TabIndex = 29;
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-6, 152);
+            this.label1.Location = new System.Drawing.Point(-7, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(547, 16);
             this.label1.TabIndex = 28;
@@ -95,7 +95,7 @@
             // 
             // txtAppointmentNumber
             // 
-            this.txtAppointmentNumber.Location = new System.Drawing.Point(196, 69);
+            this.txtAppointmentNumber.Location = new System.Drawing.Point(195, 148);
             this.txtAppointmentNumber.Multiline = true;
             this.txtAppointmentNumber.Name = "txtAppointmentNumber";
             this.txtAppointmentNumber.Size = new System.Drawing.Size(136, 28);
@@ -105,7 +105,7 @@
             // 
             this.lblAppointmentNumber.AutoSize = true;
             this.lblAppointmentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointmentNumber.Location = new System.Drawing.Point(198, 50);
+            this.lblAppointmentNumber.Location = new System.Drawing.Point(197, 129);
             this.lblAppointmentNumber.Name = "lblAppointmentNumber";
             this.lblAppointmentNumber.Size = new System.Drawing.Size(134, 16);
             this.lblAppointmentNumber.TabIndex = 24;
@@ -113,7 +113,7 @@
             // 
             // txtPatientNumber
             // 
-            this.txtPatientNumber.Location = new System.Drawing.Point(196, 202);
+            this.txtPatientNumber.Location = new System.Drawing.Point(195, 281);
             this.txtPatientNumber.Multiline = true;
             this.txtPatientNumber.Name = "txtPatientNumber";
             this.txtPatientNumber.Size = new System.Drawing.Size(136, 28);
@@ -123,7 +123,7 @@
             // 
             this.lblPatientNumber.AutoSize = true;
             this.lblPatientNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientNumber.Location = new System.Drawing.Point(211, 183);
+            this.lblPatientNumber.Location = new System.Drawing.Point(210, 262);
             this.lblPatientNumber.Name = "lblPatientNumber";
             this.lblPatientNumber.Size = new System.Drawing.Size(100, 16);
             this.lblPatientNumber.TabIndex = 30;
@@ -131,7 +131,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(15, 351);
+            this.txtFirstName.Location = new System.Drawing.Point(14, 430);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(136, 28);
@@ -141,7 +141,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(43, 332);
+            this.lblFirstName.Location = new System.Drawing.Point(42, 411);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(73, 16);
             this.lblFirstName.TabIndex = 32;
@@ -151,7 +151,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-15, 298);
+            this.label4.Location = new System.Drawing.Point(-16, 377);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(547, 16);
             this.label4.TabIndex = 34;
@@ -160,7 +160,7 @@
             // btnSearch2
             // 
             this.btnSearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch2.Location = new System.Drawing.Point(407, 266);
+            this.btnSearch2.Location = new System.Drawing.Point(406, 345);
             this.btnSearch2.Name = "btnSearch2";
             this.btnSearch2.Size = new System.Drawing.Size(85, 29);
             this.btnSearch2.TabIndex = 35;
@@ -171,7 +171,7 @@
             // btnSearch3
             // 
             this.btnSearch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch3.Location = new System.Drawing.Point(407, 561);
+            this.btnSearch3.Location = new System.Drawing.Point(406, 640);
             this.btnSearch3.Name = "btnSearch3";
             this.btnSearch3.Size = new System.Drawing.Size(85, 29);
             this.btnSearch3.TabIndex = 36;
@@ -181,7 +181,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(196, 351);
+            this.txtLastName.Location = new System.Drawing.Point(195, 430);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(136, 28);
@@ -191,7 +191,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(224, 332);
+            this.lblLastName.Location = new System.Drawing.Point(223, 411);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(73, 16);
             this.lblLastName.TabIndex = 37;
@@ -201,7 +201,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-6, 593);
+            this.label6.Location = new System.Drawing.Point(-15, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(547, 16);
             this.label6.TabIndex = 39;
@@ -209,7 +209,7 @@
             // 
             // clDOB
             // 
-            this.clDOB.Location = new System.Drawing.Point(15, 413);
+            this.clDOB.Location = new System.Drawing.Point(14, 492);
             this.clDOB.Name = "clDOB";
             this.clDOB.TabIndex = 40;
             // 
@@ -217,7 +217,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(93, 388);
+            this.lblDOB.Location = new System.Drawing.Point(92, 467);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(80, 16);
             this.lblDOB.TabIndex = 41;
@@ -226,10 +226,11 @@
             // cbAppointment
             // 
             this.cbAppointment.DropDownHeight = 200;
+            this.cbAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAppointment.FormattingEnabled = true;
             this.cbAppointment.IntegralHeight = false;
             this.cbAppointment.ItemHeight = 13;
-            this.cbAppointment.Location = new System.Drawing.Point(117, 637);
+            this.cbAppointment.Location = new System.Drawing.Point(120, 64);
             this.cbAppointment.Name = "cbAppointment";
             this.cbAppointment.Size = new System.Drawing.Size(272, 21);
             this.cbAppointment.TabIndex = 42;
@@ -239,7 +240,7 @@
             // 
             this.lblAppointment.AutoSize = true;
             this.lblAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointment.Location = new System.Drawing.Point(219, 618);
+            this.lblAppointment.Location = new System.Drawing.Point(222, 45);
             this.lblAppointment.Name = "lblAppointment";
             this.lblAppointment.Size = new System.Drawing.Size(83, 16);
             this.lblAppointment.TabIndex = 43;

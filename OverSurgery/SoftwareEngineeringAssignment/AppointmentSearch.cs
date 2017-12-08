@@ -53,6 +53,8 @@ namespace SoftwareEngineeringAssignment
                         FilteredList.Add(a);
                     }
                 }
+                if (cbAppointment.Items.Count >= 1)
+                    MessageBox.Show("One or more appointments have been found! Please select the appointment at the top of the page", "An appointment has been found");
             }
             catch
             {
@@ -77,6 +79,8 @@ namespace SoftwareEngineeringAssignment
                         }
                     }
                 }
+                if (cbAppointment.Items.Count >= 1)
+                    MessageBox.Show("One or more appointments have been found! Please select the appointment at the top of the page", "An appointment has been found");
             }
             catch
             {
@@ -102,6 +106,8 @@ namespace SoftwareEngineeringAssignment
                         }
                     }
                 }
+                if (cbAppointment.Items.Count >= 1)
+                    MessageBox.Show("One or more appointments have been found! Please select the appointment at the top of the page", "An appointment has been found");
             }
             catch
             {
