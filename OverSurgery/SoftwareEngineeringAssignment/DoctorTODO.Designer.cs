@@ -28,61 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clmPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMedicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmRenew = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblDoctor = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lvExtention = new System.Windows.Forms.ListView();
+            this.clmPatientID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmMedicineID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmMedicineName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDeclinePrescription = new System.Windows.Forms.Button();
+            this.btnAcceptPrescription = new System.Windows.Forms.Button();
+            this.txtExtentionID = new System.Windows.Forms.TextBox();
+            this.lblExtentionID = new System.Windows.Forms.Label();
+            this.btnViewPatient = new System.Windows.Forms.Button();
+            this.txtPatientID = new System.Windows.Forms.TextBox();
+            this.lblPatientID = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmPatient,
-            this.clmMedicine,
-            this.clmRenew});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(347, 275);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
-            // 
-            // clmPatient
-            // 
-            this.clmPatient.HeaderText = "Patient";
-            this.clmPatient.Name = "clmPatient";
-            // 
-            // clmMedicine
-            // 
-            this.clmMedicine.HeaderText = "Medicine";
-            this.clmMedicine.Name = "clmMedicine";
-            // 
-            // clmRenew
-            // 
-            this.clmRenew.HeaderText = "Renew";
-            this.clmRenew.Name = "clmRenew";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(385, 294);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 29);
-            this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblName.Location = new System.Drawing.Point(414, 9);
+            this.lblName.Location = new System.Drawing.Point(1600, 9);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 15);
             this.lblName.TabIndex = 26;
@@ -102,7 +69,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(385, 334);
+            this.btnExit.Location = new System.Drawing.Point(1572, 342);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 27;
@@ -110,34 +77,131 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lvExtention
+            // 
+            this.lvExtention.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmPatientID,
+            this.clmMedicineID,
+            this.clmMedicineName});
+            this.lvExtention.Location = new System.Drawing.Point(13, 28);
+            this.lvExtention.Name = "lvExtention";
+            this.lvExtention.Size = new System.Drawing.Size(1546, 343);
+            this.lvExtention.TabIndex = 28;
+            this.lvExtention.UseCompatibleStateImageBehavior = false;
+            this.lvExtention.View = System.Windows.Forms.View.Details;
+            // 
+            // clmPatientID
+            // 
+            this.clmPatientID.Text = "Patient ID";
+            // 
+            // clmMedicineID
+            // 
+            this.clmMedicineID.Text = "Medicine ID";
+            // 
+            // clmMedicineName
+            // 
+            this.clmMedicineName.Text = "Medicine Name";
+            // 
+            // btnDeclinePrescription
+            // 
+            this.btnDeclinePrescription.Location = new System.Drawing.Point(1572, 295);
+            this.btnDeclinePrescription.Name = "btnDeclinePrescription";
+            this.btnDeclinePrescription.Size = new System.Drawing.Size(84, 41);
+            this.btnDeclinePrescription.TabIndex = 29;
+            this.btnDeclinePrescription.Text = "Decline Prescription";
+            this.btnDeclinePrescription.UseVisualStyleBackColor = true;
+            this.btnDeclinePrescription.Click += new System.EventHandler(this.btnDeclinePrescription_Click);
+            // 
+            // btnAcceptPrescription
+            // 
+            this.btnAcceptPrescription.Location = new System.Drawing.Point(1572, 252);
+            this.btnAcceptPrescription.Name = "btnAcceptPrescription";
+            this.btnAcceptPrescription.Size = new System.Drawing.Size(84, 37);
+            this.btnAcceptPrescription.TabIndex = 30;
+            this.btnAcceptPrescription.Text = "Accept Prescription";
+            this.btnAcceptPrescription.UseVisualStyleBackColor = true;
+            this.btnAcceptPrescription.Click += new System.EventHandler(this.btnAcceptPrescription_Click);
+            // 
+            // txtExtentionID
+            // 
+            this.txtExtentionID.Location = new System.Drawing.Point(1572, 226);
+            this.txtExtentionID.Name = "txtExtentionID";
+            this.txtExtentionID.Size = new System.Drawing.Size(84, 20);
+            this.txtExtentionID.TabIndex = 31;
+            // 
+            // lblExtentionID
+            // 
+            this.lblExtentionID.AutoSize = true;
+            this.lblExtentionID.Location = new System.Drawing.Point(1583, 210);
+            this.lblExtentionID.Name = "lblExtentionID";
+            this.lblExtentionID.Size = new System.Drawing.Size(62, 13);
+            this.lblExtentionID.TabIndex = 32;
+            this.lblExtentionID.Text = "ExtentionID";
+            // 
+            // btnViewPatient
+            // 
+            this.btnViewPatient.Location = new System.Drawing.Point(1572, 81);
+            this.btnViewPatient.Name = "btnViewPatient";
+            this.btnViewPatient.Size = new System.Drawing.Size(84, 23);
+            this.btnViewPatient.TabIndex = 33;
+            this.btnViewPatient.Text = "View Patient";
+            this.btnViewPatient.UseVisualStyleBackColor = true;
+            this.btnViewPatient.Click += new System.EventHandler(this.btnViewPatient_Click);
+            // 
+            // txtPatientID
+            // 
+            this.txtPatientID.Location = new System.Drawing.Point(1572, 55);
+            this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.Size = new System.Drawing.Size(84, 20);
+            this.txtPatientID.TabIndex = 34;
+            // 
+            // lblPatientID
+            // 
+            this.lblPatientID.AutoSize = true;
+            this.lblPatientID.Location = new System.Drawing.Point(1583, 39);
+            this.lblPatientID.Name = "lblPatientID";
+            this.lblPatientID.Size = new System.Drawing.Size(51, 13);
+            this.lblPatientID.TabIndex = 35;
+            this.lblPatientID.Text = "PatientID";
+            // 
             // DoctorTODO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(482, 379);
+            this.ClientSize = new System.Drawing.Size(1668, 390);
+            this.Controls.Add(this.lblPatientID);
+            this.Controls.Add(this.txtPatientID);
+            this.Controls.Add(this.btnViewPatient);
+            this.Controls.Add(this.lblExtentionID);
+            this.Controls.Add(this.txtExtentionID);
+            this.Controls.Add(this.btnAcceptPrescription);
+            this.Controls.Add(this.btnDeclinePrescription);
+            this.Controls.Add(this.lvExtention);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDoctor);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "DoctorTODO";
             this.Text = "DoctorTODO";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPatient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMedicine;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmRenew;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDoctor;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListView lvExtention;
+        private System.Windows.Forms.Button btnDeclinePrescription;
+        private System.Windows.Forms.Button btnAcceptPrescription;
+        private System.Windows.Forms.ColumnHeader clmPatientID;
+        private System.Windows.Forms.ColumnHeader clmMedicineID;
+        private System.Windows.Forms.ColumnHeader clmMedicineName;
+        private System.Windows.Forms.TextBox txtExtentionID;
+        private System.Windows.Forms.Label lblExtentionID;
+        private System.Windows.Forms.Button btnViewPatient;
+        private System.Windows.Forms.TextBox txtPatientID;
+        private System.Windows.Forms.Label lblPatientID;
     }
 }

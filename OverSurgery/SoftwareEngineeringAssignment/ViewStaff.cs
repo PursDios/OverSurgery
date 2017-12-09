@@ -22,7 +22,23 @@ namespace SoftwareEngineeringAssignment
             lblName.Text = "StaffID: " + m_s.getStaffID;
             lblManager.Text = m_s.getType;
             LoadStaff();
+            CheckUser();
             WindowState = FormWindowState.Maximized;
+        }
+        private void CheckUser()
+        {
+            if(m_s.getType == "Manager")
+            {
+                BtnDelete.Visible = true;
+            }
+            else if(m_s.getType == "Receptionist")
+            {
+                BtnDelete.Visible = false;
+            }
+            else
+            {
+                BtnDelete.Visible = false;
+            }
         }
         private void LoadStaff()
         {
