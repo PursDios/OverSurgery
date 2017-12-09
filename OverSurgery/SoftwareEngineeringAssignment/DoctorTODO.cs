@@ -15,9 +15,8 @@ namespace SoftwareEngineeringAssignment
         //Variables
         Form f; 
         Staff m_s; //static Details of the staff
-        BusinessMetaLayer instance; //Operates as the link to the database
-        List<Medicine> perscriptionList;//stores the list of the medicines
-        List<Patient> patientList; //Stores the patients details
+        BusinessMetaLayer instance = BusinessMetaLayer.instance(); //Operates as the link to the database
+        List<ExtentionRequest> requestList = new List<ExtentionRequest>();//stores the list of the medicines
         /// <summary>
         /// This constructer will take the staff details from the previous form and set up the rest of the Form
         /// </summary>
@@ -25,25 +24,37 @@ namespace SoftwareEngineeringAssignment
         public DoctorTODO(Staff p_s)
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             m_s = p_s;
             lblDoctor.Text = m_s.getType;
             lblName.Text = "Staff ID: " + m_s.getStaffID;
-            instance = BusinessMetaLayer.instance();
-
-
+            loadPerscriptions();
         }
         private void loadPerscriptions()
         {
-            perscriptionList = instance.getExtentions();
+            requestList = instance.getExtentions();
             lvExtention.Clear();
-            lvExtention.Columns.Add("Patient ID", 100);
-            lvExtention.Columns.Add("Medicine ID", 100);
-            lvExtention.Columns.Add("Medicine Name", 200);
-            foreach (Medicine m in perscriptionList)
+            lvExtention.Columns.Add("ExtentionID", 100);
+            lvExtention.Columns.Add("PatientID", 100);
+            lvExtention.Columns.Add("FirstName", 200);
+            lvExtention.Columns.Add("LastName", 200);
+            lvExtention.Columns.Add("MedicineName", 200);
+            lvExtention.Columns.Add("StartDate", 200);
+            lvExtention.Columns.Add("EndDate", 200);
+            lvExtention.Columns.Add("NewEndDate", 200);
+
+            foreach (ExtentionRequest er in requestList)
             {
                 ListViewItem lvi = new ListViewItem();
-                lvi.Text = m.getMedicineID.ToString();
-                lvi.Text = m.getMedicineName.ToString();
+                lvi.Text = er.getExtentionID.ToString();
+                lvi.SubItems.Add(er.getPatientID.ToString());
+                lvi.SubItems.Add(er.getFirstName);
+                lvi.SubItems.Add(er.getLastName);
+                lvi.SubItems.Add(er.getMedicineName);
+                lvi.SubItems.Add(er.getStartDate.ToShortDateString());
+                lvi.SubItems.Add(er.getEndDate.ToShortDateString());
+                lvi.SubItems.Add(er.getNewEndDate.ToShortDateString());
+                lvExtention.Items.Add(lvi);
             }
         }
 
@@ -54,16 +65,61 @@ namespace SoftwareEngineeringAssignment
 
         private void btnAcceptPrescription_Click(object sender, EventArgs e)
         {
-            f = new AcceptExtention();
-            f.ShowDialog();
-            this.Show();
+            int Exid = int.Parse(txtExtentionID.Text);
+            int i=0;
+            foreach(ExtentionRequest er in requestList)
+            {
+                if(Exid == er.getExtentionID)
+                {
+                    Exid = i;
+                }
+                i++;
+            }
+            int MedID=0;
+            List<Medicine> medicineList = new List<Medicine>();
+            medicineList = instance.getAllMedicine();
+            foreach(Medicine m in medicineList)
+            {
+                if(m.getMedicineName == requestList[Exid].getMedicineName)
+                {
+                    MedID = m.getMedicineID;
+                }
+            }
+            if(txtExtentionID.Text != "")
+            {
+                instance.ExecuteQuery("UPDATE MedicineLink SET EndDate='" + requestList[Exid].getNewEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE PatientID=" + requestList[Exid].getPatientID + " AND MedicineID=" + MedID + " AND StartDate='" + requestList[Exid].getStartDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND EndDate='" + requestList[Exid].getEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "';");
+                instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
+                MessageBox.Show("The prescription has been extended","Prescription Extended");
+                loadPerscriptions();
+            }
         }
-
         private void btnDeclinePrescription_Click(object sender, EventArgs e)
         {
-            f = new DeclinePrescription();
-            f.ShowDialog();
-            this.Show();
+            if (txtExtentionID.Text != "")
+            {
+                instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
+                MessageBox.Show("The Extension Request has been declined", "Request Denied");
+                loadPerscriptions();
+            }
+        }
+
+        private void btnViewPatient_Click(object sender, EventArgs e)
+        {
+            if (txtPatientID.Text != "")
+            {
+                int patientID;
+                try
+                {
+                    patientID = int.Parse(txtPatientID.Text);
+                    Patient p = instance.getPatientByID(patientID);
+                    f = new PatientMenu(p, m_s);
+                    f.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid PatientID");
+                }
+            }
         }
     }
 }

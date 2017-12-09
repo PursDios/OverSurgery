@@ -30,7 +30,6 @@
         {
             this.btnEditAppointment = new System.Windows.Forms.Button();
             this.btnRegisterPatient = new System.Windows.Forms.Button();
-            this.btnExtendPerscription = new System.Windows.Forms.Button();
             this.lblReceptionist = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -60,17 +59,6 @@
             this.btnRegisterPatient.Text = "Register Patient";
             this.btnRegisterPatient.UseVisualStyleBackColor = true;
             this.btnRegisterPatient.Click += new System.EventHandler(this.btnRegisterPatient_Click);
-            // 
-            // btnExtendPerscription
-            // 
-            this.btnExtendPerscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtendPerscription.Location = new System.Drawing.Point(286, 215);
-            this.btnExtendPerscription.Name = "btnExtendPerscription";
-            this.btnExtendPerscription.Size = new System.Drawing.Size(116, 43);
-            this.btnExtendPerscription.TabIndex = 3;
-            this.btnExtendPerscription.Text = "Extend Perscription";
-            this.btnExtendPerscription.UseVisualStyleBackColor = true;
-            this.btnExtendPerscription.Click += new System.EventHandler(this.btnExtendPerscription_Click);
             // 
             // lblReceptionist
             // 
@@ -120,7 +108,7 @@
             // btnAvailable
             // 
             this.btnAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvailable.Location = new System.Drawing.Point(150, 108);
+            this.btnAvailable.Location = new System.Drawing.Point(148, 215);
             this.btnAvailable.Name = "btnAvailable";
             this.btnAvailable.Size = new System.Drawing.Size(116, 43);
             this.btnAvailable.TabIndex = 48;
@@ -131,7 +119,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(150, 215);
+            this.button1.Location = new System.Drawing.Point(286, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 43);
             this.button1.TabIndex = 49;
@@ -151,7 +139,6 @@
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblReceptionist);
-            this.Controls.Add(this.btnExtendPerscription);
             this.Controls.Add(this.btnRegisterPatient);
             this.Controls.Add(this.btnEditAppointment);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -165,7 +152,6 @@
         #endregion
         private System.Windows.Forms.Button btnEditAppointment;
         private System.Windows.Forms.Button btnRegisterPatient;
-        private System.Windows.Forms.Button btnExtendPerscription;
         private System.Windows.Forms.Label lblReceptionist;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnLogOut;

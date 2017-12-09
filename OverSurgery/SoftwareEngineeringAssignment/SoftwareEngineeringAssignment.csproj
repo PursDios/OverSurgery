@@ -50,12 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcceptExtention.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AcceptExtention.Designer.cs">
-      <DependentUpon>AcceptExtention.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddDrug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +89,6 @@
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="DbFactory.cs" />
-    <Compile Include="DeclinePrescription.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeclinePrescription.Designer.cs">
-      <DependentUpon>DeclinePrescription.cs</DependentUpon>
-    </Compile>
     <Compile Include="DeleteDrug.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +137,7 @@
     <Compile Include="ExtendPrescription.Designer.cs">
       <DependentUpon>ExtendPrescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtentionRequest.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,9 +194,6 @@
     <Compile Include="ViewStaff.Designer.cs">
       <DependentUpon>ViewStaff.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AcceptExtention.resx">
-      <DependentUpon>AcceptExtention.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddDrug.resx">
       <DependentUpon>AddDrug.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,9 +211,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeclinePrescription.resx">
-      <DependentUpon>DeclinePrescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteDrug.resx">
       <DependentUpon>DeleteDrug.cs</DependentUpon>

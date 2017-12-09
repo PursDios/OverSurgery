@@ -17,13 +17,14 @@ namespace SoftwareEngineeringAssignment
         Patient m_p;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Medicine> medicineList = new List<Medicine>();
-        List<DateTime> dt = new List<DateTime>();
 
         public ExtendPrescription(Staff p_Staff, Patient p_Patient)
         {
             InitializeComponent();
             m_s = p_Staff;
             m_p = p_Patient;
+            medicineList = instance.GetPrescriptions(m_p.getPatientID);
+            LoadCombo();
             loadPerscriptions();
         }
 
@@ -31,10 +32,21 @@ namespace SoftwareEngineeringAssignment
         {
 
         }
+        private void LoadCombo()
+        {
+            int i = 1;
+            foreach(Medicine m in medicineList)
+            {
+                cbIndex.Items.Add(i);
+                i++;
+            }
+        }
         private void loadPerscriptions()
         {
-            medicineList = instance.GetPrescriptions(m_p.getPatientID);
+            int i=1;
+            
             lvDrugs.Clear();
+            lvDrugs.Columns.Add("Index", 100);
             lvDrugs.Columns.Add("PatientID", 100);
             lvDrugs.Columns.Add("MecicineID", 100);
             lvDrugs.Columns.Add("Medicine", 200);
@@ -43,26 +55,31 @@ namespace SoftwareEngineeringAssignment
             foreach (Medicine m in medicineList)
             {
                 ListViewItem lvi = new ListViewItem();
-                lvi.Text = m_p.getPatientID.ToString();
+                lvi.Text = i.ToString();
+                lvi.SubItems.Add(m_p.getPatientID.ToString());
                 lvi.SubItems.Add(m.getMedicineID.ToString());
                 lvi.SubItems.Add(m.getMedicineName);
                 lvi.SubItems.Add(m.getStartDate.ToShortDateString());
                 lvi.SubItems.Add(m.getEndDate.ToShortDateString());
                 lvDrugs.Items.Add(lvi);
+                i++;
             }
         }
 
         private void btnExtend_Click(object sender, EventArgs e)
         {
-            if ((txtDrugID != null) && (txtPatientID != null))
+            int IndexNum = -99;
+            if (cbIndex.Text != "")
             {
-                if (m_s.getType == "Doctor")
-                {
-                    DateTime dt = Convert.ToDateTime(calDate);
-                    instance.ExecuteQuery("UPDATE 'MedicineLink' SET End Date = '" + instance.sanitize(dt.ToString("yyyy-MM-dd h:mm") + "WHERE 'MedicineId' = txtDrugID AND 'PatientID' = txtPatientID"));
-                }
-                
-
+                DateTime dt = calDate.SelectionStart;
+                IndexNum = int.Parse(cbIndex.Text);
+                IndexNum--;
+                instance.ExecuteQuery("INSERT INTO ExtensionRequests (ExtensionID, PatientID, FirstName, LastName, MedicineName, StartDate, EndDate, NewEndDate) VALUES(NULL, " + m_p.getPatientID + ", '" + m_p.getFirstName + "', '" + m_p.getLastName + "', '" + medicineList[IndexNum].getMedicineName + "', '" + medicineList[IndexNum].getStartDate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + medicineList[IndexNum].getEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + dt.ToString("yyyy-MM-dd HH:mm:ss") + "');");
+                MessageBox.Show("A request has been made", "Request Made");
+            }
+            else
+            {
+                MessageBox.Show("IndexNum Cannot be empty", "IndexNum is empty");
             }
         }
 

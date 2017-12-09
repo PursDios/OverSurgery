@@ -217,24 +217,30 @@ namespace SoftwareEngineeringAssignment
         /// <summary>
         /// Gets a list of all medication that requires a doctors approval to extend
         /// </summary>
-        public List<Medicine> getExtentions()
+        public List<ExtentionRequest> getExtentions()
         {
-            List<Medicine> medicineList = new List<Medicine>();
             if(con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT * FROM medicinelink WHERE RequestExtention = 1");
+                List<ExtentionRequest> requestList = new List<ExtentionRequest>();
+                DbDataReader dr = con.Select("SELECT * FROM extensionRequests");
                 while(dr.Read())
                 {
-                    Patient p = new Patient();
-                    Medicine m = new Medicine();
-                    p.getPatientID = dr.GetInt32(0);
-                    m.getMedicineID = dr.GetInt32(1);
-                    m.getMedicineName = dr.GetString(2);
+                    ExtentionRequest er = new ExtentionRequest();
+                    er.getExtentionID = dr.GetInt32(0);
+                    er.getPatientID = dr.GetInt32(1);
+                    er.getFirstName = dr.GetString(2);
+                    er.getLastName = dr.GetString(3);
+                    er.getMedicineName = dr.GetString(4);
+                    er.getStartDate = dr.GetDateTime(5);
+                    er.getEndDate = dr.GetDateTime(6);
+                    er.getNewEndDate = dr.GetDateTime(7);
+                    requestList.Add(er);
                 }
                 dr.Close();
                 con.CloseConnection();
+                return requestList;
             }
-            return medicineList;
+            return null;
         }
         /// <summary>
         /// Gets a list of all the medication from the database.
@@ -377,6 +383,11 @@ namespace SoftwareEngineeringAssignment
             }
             return null;
         }
+        /// <summary>
+        /// Deletes a member of staff given their First Name and Last Name
+        /// </summary>
+        /// <param name="p_FirstName"></param>
+        /// <param name="p_LastName"></param>
         public void deleteStaff(string p_FirstName, string p_LastName)
         {
             int staffID = 0;
@@ -392,6 +403,10 @@ namespace SoftwareEngineeringAssignment
             }
             ExecuteQuery("DELETE FROM Staff WHERE StaffID=" + staffID);
         }
+        /// <summary>
+        /// Returns the list of staff members and the days that they are working
+        /// </summary>
+        /// <returns></returns>
         public List<Rota> getStaffSchedule()
         {
             List<Rota> rotaList = new List<Rota>();
@@ -427,6 +442,37 @@ namespace SoftwareEngineeringAssignment
                 dr.Close();
                 con.CloseConnection();
                 return rotaList;
+            }
+            return null;
+        }
+        /// <summary>
+        /// Will return a Patient with the given PatientID
+        /// </summary>
+        /// <param name="p_PatientID">The personalised ID of a patient</param>
+        /// <returns></returns>
+        public Patient getPatientByID(int p_PatientID)
+        {
+            if(con.OpenConnection())
+            {
+                Patient p = new Patient() ;
+                DbDataReader dr = con.Select("SELECT * FROM Patient WHERE PatientID=" + p_PatientID);
+                while(dr.Read())
+                {
+                    p.getPatientID = dr.GetInt32(0);
+                    p.getLastName = dr.GetString(1);
+                    p.getFirstName = dr.GetString(2);
+                    p.getAddress = dr.GetString(3);
+                    p.getPostcode = dr.GetString(4);
+                    p.getCountry = dr.GetString(5);
+                    p.getDOB = dr.GetDateTime(6);
+                    p.getMedicalHistory = dr.GetString(7);
+                    p.getEmail = dr.GetString(8);
+                    p.getPhoneNumber = dr.GetString(9);
+                    p.getPresent = dr.GetBoolean(10);
+                }
+                dr.Close();
+                con.CloseConnection();
+                return p;
             }
             return null;
         }

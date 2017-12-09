@@ -31,14 +31,12 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblStaffType = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtDrugID = new System.Windows.Forms.TextBox();
             this.btnExtend = new System.Windows.Forms.Button();
             this.lblDrugID = new System.Windows.Forms.Label();
             this.lvDrugs = new System.Windows.Forms.ListView();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblPatientID = new System.Windows.Forms.Label();
-            this.txtPatientID = new System.Windows.Forms.TextBox();
             this.calDate = new System.Windows.Forms.MonthCalendar();
+            this.cbIndex = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -74,13 +72,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtDrugID
-            // 
-            this.txtDrugID.Location = new System.Drawing.Point(505, 36);
-            this.txtDrugID.Name = "txtDrugID";
-            this.txtDrugID.Size = new System.Drawing.Size(122, 20);
-            this.txtDrugID.TabIndex = 27;
-            // 
             // btnExtend
             // 
             this.btnExtend.Location = new System.Drawing.Point(654, 210);
@@ -94,11 +85,11 @@
             // lblDrugID
             // 
             this.lblDrugID.AutoSize = true;
-            this.lblDrugID.Location = new System.Drawing.Point(409, 39);
+            this.lblDrugID.Location = new System.Drawing.Point(409, 55);
             this.lblDrugID.Name = "lblDrugID";
-            this.lblDrugID.Size = new System.Drawing.Size(44, 13);
+            this.lblDrugID.Size = new System.Drawing.Size(47, 13);
             this.lblDrugID.TabIndex = 29;
-            this.lblDrugID.Text = "Drug ID";
+            this.lblDrugID.Text = "Index ID";
             // 
             // lvDrugs
             // 
@@ -118,22 +109,6 @@
             this.lblTime.TabIndex = 31;
             this.lblTime.Text = "Extention Until";
             // 
-            // lblPatientID
-            // 
-            this.lblPatientID.AutoSize = true;
-            this.lblPatientID.Location = new System.Drawing.Point(412, 68);
-            this.lblPatientID.Name = "lblPatientID";
-            this.lblPatientID.Size = new System.Drawing.Size(54, 13);
-            this.lblPatientID.TabIndex = 33;
-            this.lblPatientID.Text = "Patient ID";
-            // 
-            // txtPatientID
-            // 
-            this.txtPatientID.Location = new System.Drawing.Point(505, 68);
-            this.txtPatientID.Name = "txtPatientID";
-            this.txtPatientID.Size = new System.Drawing.Size(122, 20);
-            this.txtPatientID.TabIndex = 34;
-            // 
             // calDate
             // 
             this.calDate.Location = new System.Drawing.Point(415, 119);
@@ -141,20 +116,27 @@
             this.calDate.Name = "calDate";
             this.calDate.TabIndex = 35;
             // 
+            // cbIndex
+            // 
+            this.cbIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIndex.FormattingEnabled = true;
+            this.cbIndex.Location = new System.Drawing.Point(486, 52);
+            this.cbIndex.Name = "cbIndex";
+            this.cbIndex.Size = new System.Drawing.Size(121, 21);
+            this.cbIndex.TabIndex = 36;
+            // 
             // ExtendPrescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(746, 296);
+            this.Controls.Add(this.cbIndex);
             this.Controls.Add(this.calDate);
-            this.Controls.Add(this.txtPatientID);
-            this.Controls.Add(this.lblPatientID);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lvDrugs);
             this.Controls.Add(this.lblDrugID);
             this.Controls.Add(this.btnExtend);
-            this.Controls.Add(this.txtDrugID);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblStaffType);
@@ -169,13 +151,11 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblStaffType;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox txtDrugID;
         private System.Windows.Forms.Button btnExtend;
         private System.Windows.Forms.Label lblDrugID;
         private System.Windows.Forms.ListView lvDrugs;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblPatientID;
-        private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.MonthCalendar calDate;
+        private System.Windows.Forms.ComboBox cbIndex;
     }
 }
