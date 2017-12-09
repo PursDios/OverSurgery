@@ -65,60 +65,146 @@ namespace SoftwareEngineeringAssignment
 
         private void btnAcceptPrescription_Click(object sender, EventArgs e)
         {
-            int Exid = int.Parse(txtExtentionID.Text);
-            int i=0;
-            foreach(ExtentionRequest er in requestList)
+            bool parsed = false;
+            int Exid=0;
+            if (txtExtentionID.Text != "")
             {
-                if(Exid == er.getExtentionID)
+                try
                 {
-                    Exid = i;
+                    Exid = int.Parse(txtExtentionID.Text);
+                    parsed = true;
                 }
-                i++;
-            }
-            int MedID=0;
-            List<Medicine> medicineList = new List<Medicine>();
-            medicineList = instance.getAllMedicine();
-            foreach(Medicine m in medicineList)
-            {
-                if(m.getMedicineName == requestList[Exid].getMedicineName)
+                catch
                 {
-                    MedID = m.getMedicineID;
+                    MessageBox.Show("Invalid ExtensionID", "Invalid ExtensionID");
+                }
+                if (parsed)
+                {
+                    int i = 0;
+                    foreach (ExtentionRequest er in requestList)
+                    {
+                        if (Exid == er.getExtentionID)
+                        {
+                            Exid = i;
+                        }
+                        i++;
+                    }
+                    int MedID = 0;
+                    List<Medicine> medicineList = new List<Medicine>();
+                    medicineList = instance.getAllMedicine();
+                    try
+                    {
+                        foreach (Medicine m in medicineList)
+                        {
+                            if (m.getMedicineName == requestList[Exid].getMedicineName)
+                            {
+                                MedID = m.getMedicineID;
+                            }
+                        }
+                        instance.ExecuteQuery("UPDATE MedicineLink SET EndDate='" + requestList[Exid].getNewEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE PatientID=" + requestList[Exid].getPatientID + " AND MedicineID=" + MedID + " AND StartDate='" + requestList[Exid].getStartDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND EndDate='" + requestList[Exid].getEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "';");
+                        instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
+                        MessageBox.Show("The prescription has been extended", "Prescription Extended");
+                        loadPerscriptions();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("ExtensionID does not exist","Invalid ExtensionID");
+                    }
                 }
             }
-            if(txtExtentionID.Text != "")
+            else
             {
-                instance.ExecuteQuery("UPDATE MedicineLink SET EndDate='" + requestList[Exid].getNewEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE PatientID=" + requestList[Exid].getPatientID + " AND MedicineID=" + MedID + " AND StartDate='" + requestList[Exid].getStartDate.ToString("yyyy-MM-dd HH:mm:ss") + "' AND EndDate='" + requestList[Exid].getEndDate.ToString("yyyy-MM-dd HH:mm:ss") + "';");
-                instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
-                MessageBox.Show("The prescription has been extended","Prescription Extended");
-                loadPerscriptions();
+                MessageBox.Show("ExtensionID cannot be blank", "Invalid ExtensionID");
             }
         }
         private void btnDeclinePrescription_Click(object sender, EventArgs e)
         {
+            bool parsed = false;
+            int Exid = 0;
             if (txtExtentionID.Text != "")
             {
-                instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
-                MessageBox.Show("The Extension Request has been declined", "Request Denied");
-                loadPerscriptions();
+                try
+                {
+                    Exid = int.Parse(txtExtentionID.Text);
+                    parsed = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid ExtensionID", "Invalid ExtensionID");
+                }
+                if (parsed)
+                {
+                    parsed = false;
+                    foreach(ExtentionRequest er in requestList)
+                    {
+                        if(Exid == er.getExtentionID)
+                        {
+                            parsed = true;
+                        }
+                    }
+                    if (parsed)
+                    {
+                        try
+                        {
+                            instance.ExecuteQuery("DELETE FROM extensionrequests WHERE ExtensionID=" + txtExtentionID.Text);
+                            MessageBox.Show("The Extension Request has been declined", "Request Denied");
+                            loadPerscriptions();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("The ExtensionID was Invalid", "The ExtensionID was Invalid");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("extensionID does not exist", "Invalid extensionID");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("ExtensionID cannot be blank", "Invalid ExtensionID");
             }
         }
 
         private void btnViewPatient_Click(object sender, EventArgs e)
         {
+            List<Patient> patientList = new List<Patient>();
+            patientList = instance.getPatientList();
+
             if (txtPatientID.Text != "")
             {
                 int patientID;
+                bool exists = false;
                 try
                 {
                     patientID = int.Parse(txtPatientID.Text);
-                    Patient p = instance.getPatientByID(patientID);
-                    f = new PatientMenu(p, m_s);
-                    f.ShowDialog();
+                    foreach(Patient patient in patientList)
+                    {
+                        if(patient.getPatientID == patientID)
+                        {
+                            exists = true;
+                        }
+                    }
+                    if (exists)
+                    {
+                        Patient p = instance.getPatientByID(patientID);
+                        f = new PatientMenu(p, m_s);
+                        f.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Patient does not exist", "No patient found");
+                    }
                 }
                 catch
                 {
                     MessageBox.Show("Invalid PatientID");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter a PatientID", "PatientID Missing");
             }
         }
     }

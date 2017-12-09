@@ -19,6 +19,7 @@ namespace SoftwareEngineeringAssignment
         public Drugs(Staff p_s)
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             m_s = p_s;
             lblDoctor.Text = m_s.getType;
             lblName.Text = "StaffID: " + m_s.getStaffID;
@@ -48,14 +49,14 @@ namespace SoftwareEngineeringAssignment
         {
             f = new AddDrug();
             f.ShowDialog();
-            this.Show();
+            loadDugs();
         }
 
         private void btnDeleteDrug_Click(object sender, EventArgs e)
         {
             f = new DeleteDrug();
             f.ShowDialog();
-            this.Show();
+            loadDugs();
         }
     }
 }

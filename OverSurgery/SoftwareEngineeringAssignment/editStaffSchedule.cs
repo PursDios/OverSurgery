@@ -67,9 +67,7 @@ namespace SoftwareEngineeringAssignment
         private void btnEdit_Click(object sender, EventArgs e)
         {
             f = new editStaff();
-            this.Hide();
             f.ShowDialog();
-            this.Show();
         }
     }
 }

@@ -25,6 +25,10 @@ namespace SoftwareEngineeringAssignment
                 instance.ExecuteQuery("INSERT INTO Medicine (MedicineID, MedicineName) VALUES(NULL, '" + instance.sanitize(txtDrugName.Text) + "');");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Please Insert a DrugName","Insert a Drug Name");
+            }
         }
     }
 }

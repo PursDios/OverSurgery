@@ -23,6 +23,8 @@ namespace SoftwareEngineeringAssignment
             InitializeComponent();
             m_s = p_Staff;
             m_p = p_Patient;
+            lblName.Text = "StaffID: " + m_s.getStaffID;
+            lblStaffType.Text = m_s.getType;
             medicineList = instance.GetPrescriptions(m_p.getPatientID);
             LoadCombo();
             loadPerscriptions();
