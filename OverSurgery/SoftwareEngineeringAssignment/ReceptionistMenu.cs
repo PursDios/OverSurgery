@@ -45,15 +45,6 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             this.Show();
         }
-        /// <summary>
-        /// Will take you to the form to extend a perscription
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnExtendPerscription_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

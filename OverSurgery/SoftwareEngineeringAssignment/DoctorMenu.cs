@@ -107,7 +107,10 @@ namespace SoftwareEngineeringAssignment
         /// <param name="e"></param>
         private void btnAddDrug_Click(object sender, EventArgs e)
         {
-
+            f = new Drugs();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

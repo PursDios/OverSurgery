@@ -69,7 +69,6 @@
             this.btnExtendPerscription.TabIndex = 3;
             this.btnExtendPerscription.Text = "Extend Perscription";
             this.btnExtendPerscription.UseVisualStyleBackColor = true;
-            this.btnExtendPerscription.Click += new System.EventHandler(this.btnExtendPerscription_Click);
             // 
             // lblReceptionist
             // 
