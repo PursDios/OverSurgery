@@ -16,7 +16,7 @@ namespace SoftwareEngineeringAssignment
         Form f; 
         Staff m_s; //static Details of the staff
         BusinessMetaLayer instance; //Operates as the link to the database
-        List<Medicine> perscriptionList = new List<Medicine>(); //stores the list of the medicines
+        List<Medicine> perscriptionList;//stores the list of the medicines
         List<Patient> patientList; //Stores the patients details
         /// <summary>
         /// This constructer will take the staff details from the previous form and set up the rest of the Form
@@ -32,19 +32,38 @@ namespace SoftwareEngineeringAssignment
 
 
         }
-        //private void loadPerscriptions()
-       //{
-            //Medicine
-        //}
-
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void loadPerscriptions()
         {
-
+            perscriptionList = instance.getExtentions();
+            lvExtention.Clear();
+            lvExtention.Columns.Add("Patient ID", 100);
+            lvExtention.Columns.Add("Medicine ID", 100);
+            lvExtention.Columns.Add("Medicine Name", 200);
+            foreach (Medicine m in perscriptionList)
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = m.getMedicineID.ToString();
+                lvi.Text = m.getMedicineName.ToString();
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAcceptPrescription_Click(object sender, EventArgs e)
+        {
+            f = new AcceptExtention();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDeclinePrescription_Click(object sender, EventArgs e)
+        {
+            f = new DeclinePrescription();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

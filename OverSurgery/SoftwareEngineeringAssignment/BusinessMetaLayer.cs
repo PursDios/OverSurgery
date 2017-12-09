@@ -392,5 +392,43 @@ namespace SoftwareEngineeringAssignment
             }
             ExecuteQuery("DELETE FROM Staff WHERE StaffID=" + staffID);
         }
+        public List<Rota> getStaffSchedule()
+        {
+            List<Rota> rotaList = new List<Rota>();
+            if(con.OpenConnection())
+            {
+                DbDataReader dr2 = con.Select("SELECT StaffID, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday FROM rota");
+                while (dr2.Read())
+                {
+                    Rota r = new Rota();
+                    r.getStaffID = dr2.GetInt32(0);
+                    r.getMonday = dr2.GetString(1);
+                    r.getTuesday = dr2.GetString(2);
+                    r.getWednesday = dr2.GetString(3);
+                    r.getThursday = dr2.GetString(4);
+                    r.getFriday = dr2.GetString(5);
+                    r.getSaturday = dr2.GetString(6);
+                    r.getSunday = dr2.GetString(7);
+                    rotaList.Add(r);
+                }
+                dr2.Close();
+                DbDataReader dr = con.Select("SELECT StaffID, FirstName, LastName FROM staff");
+                while (dr.Read())
+                {
+                    foreach (Rota r in rotaList)
+                    {
+                        if (dr.GetInt32(0) == r.getStaffID)
+                        {
+                            r.getFirstName = dr.GetString(1);
+                            r.getLastName = dr.GetString(2);
+                        }
+                    }
+                }
+                dr.Close();
+                con.CloseConnection();
+                return rotaList;
+            }
+            return null;
+        }
     }
 }

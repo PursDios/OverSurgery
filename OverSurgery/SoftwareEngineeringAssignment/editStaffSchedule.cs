@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringAssignment
 {
-    public partial class StaffSchedule : Form
+    public partial class editStaffSchedule : Form
     {
+        Form f;
         BusinessMetaLayer instance = BusinessMetaLayer.instance();
         List<Rota> RotaList = new List<Rota>();
         Staff m_s;
         /// <summary>
         /// View the staff schedule.
         /// </summary>
-        public StaffSchedule(Staff p_s)
+        public editStaffSchedule(Staff p_s)
         {
             InitializeComponent();
             m_s = p_s;
@@ -27,7 +28,6 @@ namespace SoftwareEngineeringAssignment
             RotaList = instance.getStaffSchedule();
             loadSchedule();
         }
-
         private void loadSchedule()
         {
             LstStaffSchedule.Clear();
@@ -41,6 +41,7 @@ namespace SoftwareEngineeringAssignment
             LstStaffSchedule.Columns.Add("Friday", 100);
             LstStaffSchedule.Columns.Add("Saturday", 100);
             LstStaffSchedule.Columns.Add("Sunday", 100);
+
             foreach (Rota s in RotaList)
             {
                 ListViewItem lvi = new ListViewItem();
@@ -61,6 +62,14 @@ namespace SoftwareEngineeringAssignment
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            f = new editStaff();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

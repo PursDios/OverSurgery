@@ -75,5 +75,13 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            f = new StaffSchedule(m_s);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

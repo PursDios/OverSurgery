@@ -36,6 +36,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFindPatient = new System.Windows.Forms.Button();
             this.btnAvailable = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditAppointment
@@ -127,12 +128,24 @@
             this.btnAvailable.UseVisualStyleBackColor = true;
             this.btnAvailable.Click += new System.EventHandler(this.btnAvailable_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(150, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 43);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Staff Schedule";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ReceptionistMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(182)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(414, 318);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAvailable);
             this.Controls.Add(this.btnFindPatient);
             this.Controls.Add(this.btnLogOut);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFindPatient;
         private System.Windows.Forms.Button btnAvailable;
+        private System.Windows.Forms.Button button1;
     }
 }
