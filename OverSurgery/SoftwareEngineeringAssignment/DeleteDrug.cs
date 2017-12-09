@@ -22,7 +22,7 @@ namespace SoftwareEngineeringAssignment
         {
             if (txtDrugID != null)
             {
-                instance.ExecuteQuery("DELETE FROM 'Medicine' WHERE 'MedicineID =" + txtDrugID + " ' ");
+                instance.ExecuteQuery("DELETE FROM Medicine WHERE MedicineID =" + txtDrugID + ";");
                 this.Close();
             }
         }

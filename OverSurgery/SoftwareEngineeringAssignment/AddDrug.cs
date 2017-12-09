@@ -20,9 +20,9 @@ namespace SoftwareEngineeringAssignment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if ((txtDrugName != null) && (txtDrugDescription != null))
+            if (txtDrugName.Text != "")
             {
-                instance.ExecuteQuery("INSERT INTO Medicine (MedicineID, MedicineName, MedicineDescription) VALUES(NULL, '" + instance.sanitize(txtDrugName.Text) + "' , '" + instance.sanitize(txtDrugDescription.Text) + "');");
+                instance.ExecuteQuery("INSERT INTO Medicine (MedicineID, MedicineName) VALUES(NULL, '" + instance.sanitize(txtDrugName.Text) + "');");
                 this.Close();
             }
         }
