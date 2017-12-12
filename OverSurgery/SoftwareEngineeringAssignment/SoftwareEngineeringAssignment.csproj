@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDrug.Designer.cs">
+      <DependentUpon>AddDrug.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPrescription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="DbFactory.cs" />
+    <Compile Include="DeleteDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteDrug.Designer.cs">
+      <DependentUpon>DeleteDrug.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoctorMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +119,25 @@
     <Compile Include="EditAppointment.Designer.cs">
       <DependentUpon>EditAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="editStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStaff.Designer.cs">
+      <DependentUpon>editStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editStaffSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStaffSchedule.Designer.cs">
+      <DependentUpon>editStaffSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExtendPrescription.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExtendPrescription.Designer.cs">
       <DependentUpon>ExtendPrescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtentionRequest.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +180,7 @@
     <Compile Include="RegisterPatient.Designer.cs">
       <DependentUpon>RegisterPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rota.cs" />
     <Compile Include="StaffSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +194,9 @@
     <Compile Include="ViewStaff.Designer.cs">
       <DependentUpon>ViewStaff.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDrug.resx">
+      <DependentUpon>AddDrug.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPrescription.resx">
       <DependentUpon>AddPrescription.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +212,9 @@
     <EmbeddedResource Include="CreateAppointment.resx">
       <DependentUpon>CreateAppointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteDrug.resx">
+      <DependentUpon>DeleteDrug.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorMenu.resx">
       <DependentUpon>DoctorMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditAppointment.resx">
       <DependentUpon>EditAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editStaff.resx">
+      <DependentUpon>editStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editStaffSchedule.resx">
+      <DependentUpon>editStaffSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExtendPrescription.resx">
       <DependentUpon>ExtendPrescription.cs</DependentUpon>

@@ -45,10 +45,17 @@ namespace SoftwareEngineeringAssignment
             f.ShowDialog();
             this.Show();
         }
-
+        /// <summary>
+        /// Will take you to the editstaff schedule form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditStaffSchedule_Click(object sender, EventArgs e)
         {
-
+            f = new editStaffSchedule(m_s);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
         /// <summary>
         /// Will take you to a form to add a staff member to the database.
